@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-09T05:25:04.727Z</updated>
+  <updated>2021-09-02T07:46:29.216Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java.util.NoSuchElementException:no-line-found异常解决</title>
+    <link href="http://yoursite.com/2021/09/02/java-util-NoSuchElementException-no-line-found%E5%BC%82%E5%B8%B8%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2021/09/02/java-util-NoSuchElementException-no-line-found%E5%BC%82%E5%B8%B8%E8%A7%A3%E5%86%B3/</id>
+    <published>2021-09-02T07:30:20.000Z</published>
+    <updated>2021-09-02T07:46:29.216Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="踩坑分析"><a href="#踩坑分析" class="headerlink" title="踩坑分析"></a>踩坑分析</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>在编写代码时使用了多次使用Scanner类，导致需要多次创建对应的对象，然后发生了该异常，起初以为是scanner的nextLine()方法不能在while里面多次使用，每次以关闭后就把所有scanner对象关闭导致，后多次修改仍然报错</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>经过排查后发现是因为多个Scanner对象只要关闭了其中一个就会导致System.in也会关闭</p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>将Scanner对象设为全局变量，只new一次，就避免了多个System.in关闭冲突发生错误</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;踩坑分析&quot;&gt;&lt;a href=&quot;#踩坑分析&quot; class=&quot;headerlink&quot; title=&quot;踩坑分析&quot;&gt;&lt;/a&gt;踩坑分析&lt;/h2&gt;&lt;h3 id=&quot;内容&quot;&gt;&lt;a href=&quot;#内容&quot; class=&quot;headerlink&quot; title=&quot;内容&quot;&gt;&lt;/a&gt;内容&lt;/h</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="踩坑日常" scheme="http://yoursite.com/tags/%E8%B8%A9%E5%9D%91%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis配置异常</title>
